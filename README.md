@@ -2,10 +2,18 @@
 
 ```bash
 brew install pgbadger
+pgbadger -f stderr (find . -name "postgresql*.log")
 
-pgbadger -f stderr logs/postgresql-2019-09-14_000000.log
-pgbadger -f stderr -p '%t:%r:%u@%d:[%p]:' logs/postgresql-2019-09-14_000000.log
-
-docker attach  postgresanalysis_postgres_1 bash
-
+docker exec -it postgresanalysis_postgres_1 bash
 ```
+
+## Command
+
+```bash
+wk-send-command --sql "show log_filename"
+wk-send-command --sql "show log_directory"
+```
+
+## Resource
+
+- https://severalnines.com/database-blog/postgresql-log-analysis-pgbadger

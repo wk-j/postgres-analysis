@@ -4,3 +4,4 @@ show log_directory;
 
 show log_filename ;
 
+\dt;
