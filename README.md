@@ -2,8 +2,9 @@
 
 ```bash
 brew install pgbadger
-pgbadger -f stderr (find . -name "postgresql*.log")
 
+rm logs/*
+pgbadger -f stderr (find . -name "postgresql*.log")
 docker exec -it postgresanalysis_postgres_1 bash
 ```
 
