@@ -1,14 +1,27 @@
-## PG
+## Log Analysis
+
+*Tools*
 
 ```bash
 brew install pgbadger
+```
 
-rm logs/*
-pgbadger -f stderr (find . -name "postgresql*.log")
-docker exec -it postgresanalysis_postgres_1 bash
+*Merge logs*
 
+```bash
 cat logs/postgresql-2019-09-17_171107/*.log > x.log
-pgbadger -f stderr x.log
+```
+
+*Analysis*
+
+```bash
+pgbadger -f stderr logs/postgresql-2019-09-17_192926.log
+```
+
+*Check result*
+
+```bash
+open out.html
 ```
 
 ## Command
